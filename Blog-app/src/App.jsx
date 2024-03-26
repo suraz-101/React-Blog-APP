@@ -4,6 +4,7 @@ import { Register } from "./componenets/Register";
 import { Home } from "./componenets/Home";
 import { NotFound } from "./componenets/NotFound";
 import { CheckList } from "./componenets/CheckList";
+import { TemperatureMesurement } from "./componenets/TemperatureMesurement";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
         <Link to="/checkList">CheckBox</Link>
+        <Link to="/checkTemperature">Check Temperature</Link>
       </>
 
       <Routes>
@@ -21,6 +23,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<NotFound />} />
         <Route path="/checkList" element={<CheckList />} />
+        <Route path="/checkTemperature" element={<TemperatureMesurement />} />
       </Routes>
     </>
   );
