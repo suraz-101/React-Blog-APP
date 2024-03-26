@@ -2,17 +2,22 @@ import { useState } from "react";
 
 export const TemperatureMesurement = () => {
   const [temp, setTemp] = useState(0);
-  const [from, setFrom] = useState("F");
-  const [to, setTo] = useState("C");
+  const [conversion, setConversion] = useState({
+    From: "F",
+    To: "C",
+  });
+
   const [value, setValue] = useState(0);
 
   const temperatureChange = () => {
-    setValue(from === "C" ? (temp * 9) / 5 + 32 : ((temp - 32) * 5) / 9);
+    setValue(
+      conversion.From === "C" ? (temp * 9) / 5 + 32 : ((temp - 32) * 5) / 9
+    );
   };
   return (
     <div
-      className="border d-flex justify-content-between"
-      style={{ width: "50%" }}
+      className=" d-flex justify-content-between align-items-center"
+      style={{ width: "70%" }}
     >
       <input
         type="text"
@@ -20,16 +25,16 @@ export const TemperatureMesurement = () => {
         placeholder="Enter Temperature e"
         onChange={(e) => {
           setTemp(e.target.value);
-          temperatureChange();
         }}
+        defaultValue={0}
       />
       <label>From:</label>
       <select
         name="selectTemperature"
         id="selectTempereature"
         onChange={(e) => {
-          setFrom(e.target.value);
-          temperatureChange();
+          // setFrom(e.target.value);
+          setConversion({ From: e.target.value });
         }}
       >
         <option value="F">F</option>
@@ -40,21 +45,25 @@ export const TemperatureMesurement = () => {
         name="selectTemperature"
         id="selectTempereature"
         onChange={(e) => {
-          setTo(e.target.value);
-          temperatureChange();
+          // setTo(e.target.value);
+          setConversion({ To: e.target.value });
+
           // setValue(from === "C" ? (temp * 9) / 5 + 32 : ((temp - 32) * 5) / 9);
         }}
       >
         <option value="C">C</option>
         <option value="F">F</option>
       </select>
+
+      <button
+        className="p-2 border border-none bg-primary rounded "
+        onClick={temperatureChange}
+      >
+        Convert
+      </button>
       <label>
-        {temp} Degree {from} into {to} is {value}
+        {temp} Degree {conversion.From} into {conversion.To} is {value}
       </label>
     </div>
   );
 };
-
-//identify the selected option in to
-//identify the selected option in from
-// if selected option in from is F then setTemperature value using c formula else
