@@ -1,5 +1,8 @@
 import logoIcon from "../assets/icons/android-chrome-192x192.png";
 import "../assets/css/style.css";
+import { Routes, Route, Link } from "react-router-dom";
+import { Register } from "./Register";
+import { Home } from "./Home";
 
 export const Login = () => {
   return (
@@ -76,12 +79,12 @@ export const Login = () => {
 
                       <label className="p-2 d-flex justify-content-center align-items-center">
                         Dont have an account?
-                        <a
-                          href="register.html"
+                        <Link
+                          to="/register"
                           className="px-2 text-decoration-none"
                         >
-                          Sign Up
-                        </a>
+                          SignUp
+                        </Link>
                       </label>
                     </form>
                   </div>
@@ -91,6 +94,11 @@ export const Login = () => {
           </div>
         </div>
       </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </>
   );
 };
