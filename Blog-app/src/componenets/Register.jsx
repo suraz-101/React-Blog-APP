@@ -1,5 +1,7 @@
 import logoIcon from "../assets/icons/android-chrome-192x192.png";
 import "../assets/css/style.css";
+
+import { Link } from "react-router-dom";
 export const Register = () => {
   return (
     <>
@@ -132,12 +134,14 @@ export const Register = () => {
                       </button>
                       <label className="p-2 d-flex justify-content-center align-items-center">
                         Already have an account?
-                        <a
-                          href="login.html"
+                        <Link
                           className="px-2 text-decoration-none"
+                          px-2
+                          text-decoration-none
+                          to="/login"
                         >
-                          SignIn
-                        </a>
+                          Sign in
+                        </Link>
                       </label>
                     </form>
                   </div>

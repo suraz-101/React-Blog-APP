@@ -20,9 +20,11 @@ const AdminNavbar = () => {
               navbarScroll
             >
               <Nav.Link href="#">
-                <Link path="/admin/blogs">Blogs</Link>
+                <Link to="/admin">Home</Link>
               </Nav.Link>
-              <Nav.Link path="/admin/blogs">Blogs</Nav.Link>
+              <Nav.Link path="/admin/blogs">
+                <Link to="/admin/blogs">Blogs</Link>
+              </Nav.Link>
               <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">

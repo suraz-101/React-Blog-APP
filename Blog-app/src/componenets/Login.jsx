@@ -1,6 +1,6 @@
 import logoIcon from "../assets/icons/android-chrome-192x192.png";
 import "../assets/css/style.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Register } from "./Register";
 import { Home } from "./Home";
 
@@ -95,10 +95,10 @@ export const Login = () => {
         </div>
       </div>
 
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
-      </Routes>
+      </Routes> */}
     </>
   );
 };

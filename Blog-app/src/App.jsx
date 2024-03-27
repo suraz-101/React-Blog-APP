@@ -9,6 +9,7 @@ import { Blogs } from "./componenets/Blogs";
 import { Blog } from "./componenets/Blog";
 import AdminNavbar from "./layout/AdminNavbar";
 import { CurrrencyConverter } from "./componenets/CurrrencyConverter";
+import { AppNavbar } from "./layout/AppNavbar";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
       </> */}
       <CurrrencyConverter />
       <Routes>
-        <Route path="/">
+        <Route path="/" element={<AppNavbar />}>
           <Route index element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
