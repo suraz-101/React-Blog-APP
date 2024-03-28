@@ -10,10 +10,12 @@ import { Blog } from "./componenets/Blog";
 import AdminNavbar from "./layout/AdminNavbar";
 import { CurrrencyConverter } from "./componenets/CurrrencyConverter";
 import { AppNavbar } from "./layout/AppNavbar";
+import { StopWatch } from "./practice/StopWatch";
 
 function App() {
   return (
     <>
+      <StopWatch />
       {/* <>
         <Link to="/">Home</Link>
         <Link to="/login">Login</Link>
